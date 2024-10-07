@@ -1,3 +1,3 @@
 <?php
-    echo "Hello World!";
+    require 'views/index.view.php';
 ?>
