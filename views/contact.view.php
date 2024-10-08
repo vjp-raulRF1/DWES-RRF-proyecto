@@ -33,33 +33,35 @@
        	   <h1>CONTACT US</h1>
        	   <hr>
        	   <p>Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-	       <form class="form-horizontal">
+		   <div class="alert alert-danger">	<?php (!empty($errores) ? print_r($errores) : ''); ?>		</div>
+		   <div class="alert alert-info">	<?php if(!empty($noErrores) ? print_r($noErrores) : ''); ?></div>
+	       <form class="form-horizontal" method="post">
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-6">
 	       	  	    <label class="label-control">First Name</label>
-	       	  		<input class="form-control" type="text">
+	       	  		<input class="form-control" type="text" name="nombre" value="<?php if(isset($_POST['nombre'] )) echo $_POST['nombre']  ; ?>"> 
 	       	  	</div>
 	       	  	<div class="col-xs-6">
 	       	  	    <label class="label-control">Last Name</label>
-	       	  		<input class="form-control" type="text">
+	       	  		<input class="form-control" type="text" name="apellido" value="<?php echo isset($apellido) ? $apellido : ''; ?>"> 
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Email</label>
-	       	  		<input class="form-control" type="text">
+	       	  		<input class="form-control" type="text" name="email" value="<?= $_POST['email'] ?? '' ?>">	
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Subject</label>
-	       	  		<input class="form-control" type="text">
+	       	  		<input class="form-control" type="text" name="sujeto" value="<?php echo isset($sujeto) ? $sujeto : ''; ?>"> 
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Message</label>
-	       	  		<textarea class="form-control"></textarea>
+	       	  		<textarea class="form-control" name="mensaje"><?php echo isset($mensaje) ? $mensaje : ''; ?></textarea>
 	       	  		<button class="pull-right btn btn-lg sr-button">SEND</button>
 	       	  	</div>
 	       	  </div>
