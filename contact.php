@@ -5,6 +5,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errores = [];
     $noErrores = [];
+    $claseDiv='';
     if (empty($_POST['nombre'])) {
         $errores[] = "Debe introducir su nombre";
     } else {
@@ -25,25 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores[] = "introduzca un email válido";
     }
 
-    if (empty($_POST['sujeto'])) {
-        $errores[] = "Debe introducir su sujeto";
+    if (empty($_POST['asunto'])) {
+        $errores[] = "Debe introducir su asunto";
     } else {
-        $sujeto = ($_POST['sujeto']);
-        $noErrores['sujeto'] = $_POST['sujeto'];
+        $asunto = ($_POST['asunto']);
+        $noErrores['asunto'] = $_POST['asunto'];
     }
 
     if (!empty($_POST['mensaje'])) {
         $mensaje = ($_POST['mensaje']);
         $noErrores['mensaje'] = $_POST['mensaje'];
     }
-
-    if(!empty($$noErrores)){
-        foreach($noErrores as $clave => $valor){
-            $valorString = implode(", ", $valor);
-            echo $clave . '=' . $valorString .'<br>';
-        }
-    }
-
 
 }
 

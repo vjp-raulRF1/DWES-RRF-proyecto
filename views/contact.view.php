@@ -16,7 +16,7 @@
 	   	 </div>
 	   	 <div class="collapse navbar-collapse navbar-right" id="menu">
 	   	 	<ul class="nav navbar-nav">
-	   	 		<li class=" lien"><a href="index.php"><i class="fa fa-home sr-icons"></i> Home</a></li>
+	   	 		<li class="lien"><a href="index.php"><i class="fa fa-home sr-icons"></i> Home</a></li>
 	   	 		<li class="lien"><a href="about.php"><i class="fa fa-bookmark sr-icons"></i> About</a></li>
 	   	 		<li class="lien"><a href="blog.html"><i class="fa fa-file-text sr-icons"></i> Blog</a></li>
 	   	 		<li class="active"><a href="#"><i class="fa fa-phone-square sr-icons"></i> Contact</a></li>
@@ -33,8 +33,13 @@
        	   <h1>CONTACT US</h1>
        	   <hr>
        	   <p>Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-		   <div class="alert alert-danger">	<?php (!empty($errores) ? print_r($errores) : ''); ?>		</div>
-		   <div class="alert alert-info">	<?php if(!empty($noErrores) ? print_r($noErrores) : ''); ?></div>
+			  <div class="<?php echo (!empty($errores)) ? 'alert alert-danger' : ''; ?>">	
+			<?php if(!empty($errores)){echo '<ul>';foreach($errores as $error){echo	'<li>'.($error).'</li>';}echo '</ul>';} ?>
+			</div>
+			
+			<div class="<?php echo (!empty($noErrores)&& empty($errores)) ? 'alert alert-info' : ''; ?>">	
+			<?php if(!empty($noErrores)&& empty($errores)){foreach($noErrores as $clave => $valor){echo $clave . '=' . $valor .'<br>';}}; ?>
+		</div>
 	       <form class="form-horizontal" method="post">
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-6">
@@ -43,7 +48,7 @@
 	       	  	</div>
 	       	  	<div class="col-xs-6">
 	       	  	    <label class="label-control">Last Name</label>
-	       	  		<input class="form-control" type="text" name="apellido" value="<?php echo isset($apellido) ? $apellido : ''; ?>"> 
+	       	  		<input class="form-control" type="text" name="apellido" value="<?php  if(isset($_POST['apellido'] )) echo $_POST['apellido']  ; ?>"> 
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
@@ -55,13 +60,13 @@
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Subject</label>
-	       	  		<input class="form-control" type="text" name="sujeto" value="<?php echo isset($sujeto) ? $sujeto : ''; ?>"> 
+	       	  		<input class="form-control" type="text" name="asunto" value="<?php if(isset($_POST['asunto'] )) echo $_POST['asunto']; ?>"> 
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Message</label>
-	       	  		<textarea class="form-control" name="mensaje"><?php echo isset($mensaje) ? $mensaje : ''; ?></textarea>
+	       	  		<textarea class="form-control" name="mensaje"><?php if(isset($_POST['mensaje'] )) echo $_POST['mensaje']; ?></textarea>
 	       	  		<button class="pull-right btn btn-lg sr-button">SEND</button>
 	       	  	</div>
 	       	  </div>
