@@ -24,7 +24,7 @@
 	   	 </div>
    	 </div>
    </nav>
-<!-- End of Navigation Bar -->
+<!-- End of Navigation Bar --> 
 
 <!-- Principal Content Start -->
    <div id="contact">
