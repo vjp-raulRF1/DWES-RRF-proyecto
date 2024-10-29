@@ -1,12 +1,12 @@
 <div class="row popup-gallery">
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                  <img class="img-responsive" src="<?php {$imagenesGaleria[1]->getUrlPortfolio();}?>" alt="<?php {$imagenesGaleria[1]->getDescripcion();}?>">
+                  <img class="img-responsive" src="<?= $imagenesGaleria[0]->getUrlPortfolio() ?>" alt="<?php {$imagenesGaleria[0]->getDescripcion();}?>">
                   <div class="behind">
                       <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="<?php {$imagenesGaleria[1]->getUrlGallery();}?>" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[0]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -39,12 +39,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="<?php {$imagenesGaleria[2]->getUrlPortfolio();}?>" alt="<?php {$imagenesGaleria[2]->getDescripcion();}?>">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[1]->getUrlPortfolio()?>" alt="<?php {$imagenesGaleria[1]->getDescripcion();}?>">
                     <div class="behind"> 
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="<?php {$imagenesGaleria[2]->getUrlGallery();}?>" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[1]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -77,12 +77,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/3.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[2]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[2]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/3.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[2]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -115,12 +115,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/4.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[3]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[3]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/4.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[3]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -153,12 +153,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/5.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[4]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[4]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/5.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[4]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -191,12 +191,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/8.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[5]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[5]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/8.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[5]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -229,12 +229,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/7.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[6]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[6]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/7.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[6]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -267,12 +267,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/6.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[7]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[7]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/6.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[7]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -305,12 +305,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/9.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[8]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[8]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/9.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[8]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -343,12 +343,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/10.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[9]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[9]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/10.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[9]->getUrlGallery()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -381,12 +381,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/11.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[10]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[10]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/11.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[10]->getUrlPortfolio()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>
@@ -419,12 +419,12 @@
                 </div> 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="images/index/portfolio/12.jpg" alt="First category picture">
+                    <img class="img-responsive" src="<?= $imagenesGaleria[11]->getUrlPortfolio()?>" alt="<?= $imagenesGaleria[11]->getDescripcion()?>">
                     <div class="behind">
                         <div class="head text-center">
                         <ul class="list-inline">
                           <li>
-                            <a class="gallery" href="images/index/gallery/12.jpg" data-toggle="tooltip" data-original-title="Quick View">
+                            <a class="gallery" href="<?= $imagenesGaleria[11]->getUrlPortfolio()?>" data-toggle="tooltip" data-original-title="Quick View">
                               <i class="fa fa-eye"></i>
                             </a>
                           </li>

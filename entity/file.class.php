@@ -71,5 +71,22 @@ class File
             throw new FileException("No se puede mover el fichero a su destino");
         }
     }
+
+    public function copyFile (string $rutaOrigen, string $rutaDestino) {
+        $origen = $rutaOrigen . $this->fileName;
+        $destino = $rutaDestino . $this->fileName;
+      
+        if (is_file($origen) === false) {
+          throw new FileException(mensaje: "No existe el fichero $origen que intentas copiar");
+        }
+      
+        if (is_file($destino) === true) {
+          throw new FileException(mensaje: "El fichero $destino ya existe y no se puede sobreescribirlo");
+        }
+      
+        if (copy($origen, $destino) === false) {
+          throw new FileException(mensaje: "No se ha podido copiar el fichero $origen a $destino");
+        }
+      }
 }
 ?>
