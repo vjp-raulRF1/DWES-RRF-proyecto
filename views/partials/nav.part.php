@@ -7,6 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+
       </button>
       <a class="navbar-brand page-scroll" href="#page-top">
         <span>[PHOTO]</span>
@@ -33,9 +34,19 @@
         </a>
     </li>
     <!-- Enlace a la página de contacto, marcado como activo si la URL actual es /contact.php -->
-    <li class="<?php echo esOpcionMenuActiva("/contact.php") ? "active" : "" ?>">
+    <li class="<?php echo esOpcionMenuActiva("/contact.php") ? "active" : "" ?> lien">
         <a href="<?php echo esOpcionMenuActiva("/contact.php") ? "#" : "contact.php" ?>">
             <i class="fa fa-phone-square sr-icons"></i> Contact
+        </a>
+    </li>
+    <li class="<?php echo esOpcionMenuActiva("/gallery.php") ? "active" : "" ?> lien">
+        <a href="<?php echo esOpcionMenuActiva("/gallery.php") ? "#" : "gallery.php" ?>">
+            <i class="fa fa-image sr-icons"></i> Gallery
+        </a>
+    </li>
+    <li class="<?php echo esOpcionMenuActiva("/partners.php") ? "active" : "" ?> lien">
+        <a href="<?php echo esOpcionMenuActiva("/partners.php") ? "#" : "partners.php" ?>">
+            <i class="fa fa-image sr-icons"></i> Partners
         </a>
     </li>
 </ul>

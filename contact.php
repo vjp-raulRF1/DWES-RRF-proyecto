@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 }
-
+require 'utils/utils.php';
 require 'views/contact.view.php';
 
 ?>
