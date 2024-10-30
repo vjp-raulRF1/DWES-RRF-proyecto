@@ -46,7 +46,7 @@
     </li>
     <li class="<?php echo esOpcionMenuActiva("/partners.php") ? "active" : "" ?> lien">
         <a href="<?php echo esOpcionMenuActiva("/partners.php") ? "#" : "partners.php" ?>">
-            <i class="fa fa-image sr-icons"></i> Partners
+            <i class="fa fa-hand-o-right sr-icons"></i> Partners
         </a>
     </li>
 </ul>
