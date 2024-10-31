@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../exceptions/file_exception.class.php';
+require __DIR__.'/../utils/const.php';
 class File
 {
     private $file;
@@ -17,25 +18,11 @@ class File
         }
         //Verificamos si ha habido algún error durante la subida del fichero
         if ($this->file['error'] !== UPLOAD_ERR_OK) {
-            //Dentro del if verificamos de que tipo ha sido el error
-            switch ($this->file['error']) {
-                case UPLOAD_ERR_INI_SIZE:
-                case UPLOAD_ERR_FORM_SIZE: {
-                        //Algún problema con el tamaño del fichero
-                        throw new FileException('El fichero es demasiado grande');
-                        break;
-                    }
-                case UPLOAD_ERR_PARTIAL: {
-                        //Error en la transferencia subida incompleta
-                        throw new FileException('No se ha podido subir el fichero completo');
-                        break;
-                    }
-                default: {
-                        //Error en la subida del fichero
-                        throw new FileException('No se ha podido subir el fichero');
-                        break;
-                    }
-            }
+            // Obtenemos el mensaje de error utilizando la función getErrorString
+            $mensajeError = getErrorString($this->file['error']);
+            
+            // Lanzamos la excepción con el mensaje de error correspondiente
+            throw new FileException($mensajeError);
         }
         //Comprobamos si el fichero subido es de un tipo de los que tenemos soportados
         if (in_array($this->file['type'], $arrTypes) === false) {
