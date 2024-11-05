@@ -1,6 +1,7 @@
 <?php
 
 define("ERROR_MV_UP_FILE", 9);
+define("ERROR_EXECUTE_STATEMENT", 10);
 
 $uploadErrors = array(
     'UPLOAD_ERR_OK' => 0,
@@ -25,6 +26,7 @@ function getErrorString($uploadErrors) {
         7 => 'No se pudo escribir el archivo en el disco.',
         8 => 'Una extensión de PHP detuvo la carga del archivo.',
         9 => 'No se ha podido mover el archivo de destino.',
+        10 => 'No se ha podido ejecutar la consulta',
         default => 'Error desconocido.'
     };
 }
