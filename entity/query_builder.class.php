@@ -31,9 +31,7 @@ class QueryBuilder
         //Como la sentencia SQL no tiene parámetros, no es necesario
         //pasarle nada al método execute
         if ($pdoStatement->execute() === false) {
-            $mensajeError = getErrorString($pdoStatement['error']);
-
-            throw new FileException($mensajeError);
+            throw new QueryException(getErrorString(ERROR_EXECUTE_STATEMENT));
         }
 
         return $pdoStatement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,$classEntity);

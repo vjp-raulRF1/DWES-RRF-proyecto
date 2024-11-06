@@ -53,13 +53,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($imagenesGaleria as $img): ?>
+                        <?php foreach ($imagenes as $img): ?>
                             <tr>
                                 <th scope="row"><?= $img->getId() ?></th>
                                 <td>
                                     <img src="<?= $img->getUrlGallery() ?>"
                                         alt="<?= $img->getDescripcion() ?>"
-                                        title="<?= $img->getDescripcion() ?>">
+                                        title="<?= $img->getDescripcion() ?>" width="100px">
                                 </td>
                                 <td><?= $img->getNumVisualizaciones() ?></td>
                                 <td><?= $img->getNumLikes() ?></td>

@@ -2,6 +2,8 @@
 
 define("ERROR_MV_UP_FILE", 9);
 define("ERROR_EXECUTE_STATEMENT", 10);
+define("ERROR_APP_CORE", 11);
+define("ERROR_CON_BD", 12);
 
 $uploadErrors = array(
     'UPLOAD_ERR_OK' => 0,
@@ -12,7 +14,8 @@ $uploadErrors = array(
     'UPLOAD_ERR_NO_TMP_DIR' => 6,
     'UPLOAD_ERR_CANT_WRITE' => 7,
     'UPLOAD_ERR_EXTENSION' => 8,
-    'ERROR_MV_UP_FILE' => 9
+    'ERROR_MV_UP_FILE' => 9,
+    'ERROR_EXECUTE_STATEMENT' => 10
 );
 
 function getErrorString($uploadErrors) {
@@ -27,6 +30,8 @@ function getErrorString($uploadErrors) {
         8 => 'Una extensión de PHP detuvo la carga del archivo.',
         9 => 'No se ha podido mover el archivo de destino.',
         10 => 'No se ha podido ejecutar la consulta',
+        11 => '"No se ha encontrado la clave en el contenedor"',
+        12 => '"No se ha podido crear la conexión a la base de datos"',
         default => 'Error desconocido.'
     };
 }

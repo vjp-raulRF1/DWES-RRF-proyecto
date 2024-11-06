@@ -1,6 +1,6 @@
 <?php
 require 'utils/utils.php';
-require 'entity/image_galey.class.php';
+require 'entity/image_gallery.class.php';
 require 'entity/partners.class.php';
 
 $imagenesGaleria = [];

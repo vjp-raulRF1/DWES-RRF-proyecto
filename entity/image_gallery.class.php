@@ -4,14 +4,14 @@ class ImagenGaleria
     const RUTA_IMAGENES_PORTFOLIO = 'images/index/portfolio/';
     const RUTA_IMAGENES_GALLERY = 'images/index/gallery/';
 
-
+    private $id;
     private $nombre;
     private $descripcion;
     private $numVisualizaciones;
     private $numLikes;
     private $numDownloads;
 
-    public function __construct(string $nombre, string $descripcion, int $numVisualizaciones = 0, int $numLikes = 0, int $numDownloads = 0)
+    public function __construct(string $nombre='', string $descripcion='', int $numVisualizaciones = 0, int $numLikes = 0, int $numDownloads = 0)
     {
         //Podremos pasarle solo el nombre y la descripcion y el resto por defecto será 0
         $this->nombre = $nombre;
@@ -21,7 +21,10 @@ class ImagenGaleria
         $this->numDownloads = $numDownloads;
     }
 
-
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function getNombre(): string
     {
