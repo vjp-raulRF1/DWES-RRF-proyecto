@@ -1,7 +1,7 @@
 <?php
 require 'utils/utils.php';
-require 'entity/image_gallery.class.php';
-require 'entity/partners.class.php';
+require 'entities/image_gallery.class.php';
+require 'entities/partners.class.php';
 
 $imagenesGaleria = [];
 for ($i = 1; $i <= 12; $i++) {

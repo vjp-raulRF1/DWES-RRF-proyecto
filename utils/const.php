@@ -4,6 +4,7 @@ define("ERROR_MV_UP_FILE", 9);
 define("ERROR_EXECUTE_STATEMENT", 10);
 define("ERROR_APP_CORE", 11);
 define("ERROR_CON_BD", 12);
+define("ERROR_INS_BD", 13);
 
 $uploadErrors = array(
     'UPLOAD_ERR_OK' => 0,
@@ -15,7 +16,10 @@ $uploadErrors = array(
     'UPLOAD_ERR_CANT_WRITE' => 7,
     'UPLOAD_ERR_EXTENSION' => 8,
     'ERROR_MV_UP_FILE' => 9,
-    'ERROR_EXECUTE_STATEMENT' => 10
+    'ERROR_EXECUTE_STATEMENT' => 10,
+    'ERROR_APP_CORE' => 11,
+    'ERROR_CON_BD' => 12,
+    'ERROR_INS_BD' => 13
 );
 
 function getErrorString($uploadErrors) {
@@ -32,6 +36,7 @@ function getErrorString($uploadErrors) {
         10 => 'No se ha podido ejecutar la consulta',
         11 => '"No se ha encontrado la clave en el contenedor"',
         12 => '"No se ha podido crear la conexión a la base de datos"',
+        13 => '"Error al insertar en la BD"',
         default => 'Error desconocido.'
     };
 }

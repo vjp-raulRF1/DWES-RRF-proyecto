@@ -1,5 +1,7 @@
 <?php
-class ImagenGaleria
+
+require_once 'entities/database/IEntity.class.php';
+class ImagenGaleria implements IEntity
 {
     const RUTA_IMAGENES_PORTFOLIO = 'images/index/portfolio/';
     const RUTA_IMAGENES_GALLERY = 'images/index/gallery/';
@@ -11,9 +13,10 @@ class ImagenGaleria
     private $numLikes;
     private $numDownloads;
 
-    public function __construct(string $nombre='', string $descripcion='', int $numVisualizaciones = 0, int $numLikes = 0, int $numDownloads = 0)
+    public function __construct(string $nombre = '', string $descripcion = '', int $numVisualizaciones = 0, int $numLikes = 0, int $numDownloads = 0)
     {
         //Podremos pasarle solo el nombre y la descripcion y el resto por defecto será 0
+        $this->id=null;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->numVisualizaciones = $numVisualizaciones;
@@ -95,4 +98,17 @@ class ImagenGaleria
     {
         return self::RUTA_IMAGENES_GALLERY . $this->getNombre();
     }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->getId(),
+            'nombre' => $this->getNombre(),
+            'descripcion' => $this->getDescripcion(),
+            'numVisualizaciones' => $this->getNumVisualizaciones(),
+            'numLikes' => $this->getNumLikes(),
+            'numDownloads' => $this->getNumDownloads()
+        ];
+    }
 }
+?>
