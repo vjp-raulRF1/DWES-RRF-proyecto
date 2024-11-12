@@ -12,8 +12,9 @@ class ImagenGaleria implements IEntity
     private $numVisualizaciones;
     private $numLikes;
     private $numDownloads;
+    private $categoria;
 
-    public function __construct(string $nombre = '', string $descripcion = '', int $numVisualizaciones = 0, int $numLikes = 0, int $numDownloads = 0)
+    public function __construct(string $nombre = '', string $descripcion = '', $categoria=0, int $numVisualizaciones = 0, int $numLikes = 0, int $numDownloads = 0)
     {
         //Podremos pasarle solo el nombre y la descripcion y el resto por defecto será 0
         $this->id=null;
@@ -22,6 +23,7 @@ class ImagenGaleria implements IEntity
         $this->numVisualizaciones = $numVisualizaciones;
         $this->numLikes = $numLikes;
         $this->numDownloads = $numDownloads;
+        $this->categoria=$categoria;
     }
 
     public function getId()
@@ -85,6 +87,17 @@ class ImagenGaleria implements IEntity
     public function setNumDownloads($numDownloads)
     {
         $this->numDownloads = $numDownloads;
+
+        return $this;
+    }
+    
+    public function getCategoria(): string
+    {
+        return $this->categoria;
+    }
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
 
         return $this;
     }
