@@ -98,6 +98,7 @@ abstract class QueryBuilder
             throw new Exception($exception->getMessage());
         }
     }
+
 }
 
 ?>

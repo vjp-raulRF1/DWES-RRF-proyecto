@@ -1,22 +1,48 @@
 <?php
-require 'utils/utils.php';
-require 'entities/image_gallery.class.php';
-require 'entities/partners.class.php';
+require_once 'utils/utils.php';
+require_once 'entities/image_gallery.class.php';
+require_once 'entities/partners.class.php';
+require_once 'entities/connection.class.php';
+require_once 'entities/repository/image_gallery_repository.class.php';
+require_once 'entities/repository/partner_repository.class.php';
 
-$imagenesGaleria = [];
-for ($i = 1; $i <= 12; $i++) {
-    $imagenesGaleria[] = new ImagenGaleria("$i.jpg", "Descripción imagen $i", rand(0, 5000), rand(0, 5000), rand(0, 5000));
+$errores = [];
+
+try {
+    $config = require_once 'app/config.php';
+
+ 
+    App::bind('config', $config);
+    $connection = App::getConnection();
+    
+    $imagenRepository = new ImagenGaleriaRepository();
+    
+    $imagenesGaleria = $imagenRepository->findAll();
+}
+catch (QueryException | AppException $exception) {
+    
+    $errores[] = $exception->getMessage();
 }
 
-$arrayPartners = [];
-for ($i=1; $i <=3 ; $i++) { 
-    $partner = new Partners("Asociado $i", "log$i.jpg", "Imagen asocaido $i");
-    array_push($arrayPartners, $partner);
+try {
+    $config = require_once 'app/config.php';
+    
+ 
+    App::bind('config', $config);
+    $connection = App::getConnection();
+    
+    $partnerRepository = new PartnerRepository();
+
+    
+    $partners = $partnerRepository->findAll();
 }
-if (sizeof($arrayPartners) > 3) {
-    $arrayPartners = mezclarPartners($arrayPartners);
+catch (FileException | QueryException | AppException $exception) {
+    
+    $errores[] = $exception->getMessage();
 }
 
 
+
+  
 require 'views/index.view.php';
 ?>

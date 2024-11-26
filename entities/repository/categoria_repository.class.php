@@ -1,5 +1,6 @@
 <?php
 require_once 'entities/query_builder.class.php';
+require_once 'entities/categorias.class.php';
 
 class CaregoriaRepository extends QueryBuilder
 {

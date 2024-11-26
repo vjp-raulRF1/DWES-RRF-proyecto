@@ -1,5 +1,6 @@
 <?php
-require 'app.class.php';
+require_once 'entities/app.class.php';
+require_once 'exceptions/app_exception.class.php';
 class Connection
 {
   public static function make()

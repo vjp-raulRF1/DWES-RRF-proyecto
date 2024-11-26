@@ -45,12 +45,24 @@ class File
         //Cargamos el nombre del fichero
         $this->fileName = $this->file['name']; //nombre original del fichero cuando se subió
         $ruta = $rutaDestino . $this->fileName; //concateno la rutaDestino con el nombre del fichero
+        $contador=0;
         //Comprobamos que la ruta no se corresponda con un fichero que ya exista
         if (is_file($ruta) == true) {
-            //no sobreescribo, sino que genero uno nuevo añadiendo la fecha y hora actual
-            $fechaActual = date(format: 'dmYHis');
-            $this->fileName = $this->fileName . '_' . $fechaActual;
-            $ruta = $rutaDestino . $this->fileName; //Actualizo la variable ruta con el nuevo nombre
+            $contador++;
+            
+            $FNParts = explode(".", $this->fileName);
+            $this->fileName = $FNParts[0] . "(" . $contador . ")." . $FNParts[1];
+
+            // ACTUALIZO LA (ruta) CON EL NUEVO NOMBRE
+            $ruta = $rutaDestino . $this->fileName;
+
+            // SE REPITE MIENTRAS EXISTA UN FICHERO CON EL MISMO NOMBRE
+            while (is_file($rutaDestino . $this->fileName) == true) {
+                $contador++;
+                $this->fileName = $FNParts[0] . "(" . $contador . ")." . $FNParts[1];
+
+                $ruta = $rutaDestino . $this->fileName;
+            }
         }
         //muevo el fichero subido del directorio temporal (viene definido en php.ini)
         if (move_uploaded_file($this->file['tmp_name'], $ruta) === false) {
@@ -64,15 +76,15 @@ class File
         $destino = $rutaDestino . $this->fileName;
       
         if (is_file($origen) === false) {
-          throw new FileException(mensaje: "No existe el fichero $origen que intentas copiar");
+          throw new FileException("No existe el fichero $origen que intentas copiar");
         }
       
         if (is_file($destino) === true) {
-          throw new FileException(mensaje: "El fichero $destino ya existe y no se puede sobreescribirlo");
+          throw new FileException("El fichero $destino ya existe y no se puede sobreescribirlo");
         }
       
         if (copy($origen, $destino) === false) {
-          throw new FileException(mensaje: "No se ha podido copiar el fichero $origen a $destino");
+          throw new FileException("No se ha podido copiar el fichero $origen a $destino");
         }
       }
 }
