@@ -7,14 +7,18 @@
             parent::__construct($table, $classEntity);
         }
 
-
         public function guardar(Partner $partner) {
-
-            $fnGuardaAsociado = function () use ($partner) {
-                $this->save($partner); 
-            };
-    
-            $this->executeTransaction($fnGuardaAsociado);
+            // Aquí podrías manejar la transacción directamente
+            $connection = App::getConnection(); // Iniciar la transacción
+            $connection->beginTransaction();
+        
+            try {
+                $this->save($partner); // Guardar el mensaje
+                $connection->commit(); // Confirmar la transacción
+            } catch (\Exception $e) {
+                $connection->rollBack();; // Revertir la transacción en caso de error
+                throw $e; // Volver a lanzar la excepción si es necesario
+            }
         }
     }
 ?>
