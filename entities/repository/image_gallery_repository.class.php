@@ -9,11 +9,7 @@ class ImagenGaleriaRepository extends QueryBuilder
         parent::__construct($table, $classEntity);
     }
 
-    public function getCategoria(ImagenGaleria $imagenGaleria): Categoria
-    {
-        $categoriaRepository = new CaregoriaRepository();
-        return $categoriaRepository->find($imagenGaleria->getCategoria());
-    }
+
 
 
 }

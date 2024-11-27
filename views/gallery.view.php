@@ -37,8 +37,8 @@
                         <label class="label-control">Categoria</label>
                         <select class="form-control" name="categoria">
                             <?php foreach ($categorias as $categoria): ?>
-                                <option value="<?= $categoria->getId() ?>">
-                                    <?= $categoria->getNombre() ?>
+                                <option value="<?= htmlspecialchars($categoria->getId()) ?>">
+                                    <?= htmlspecialchars($categoria->getNombre()) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -74,7 +74,7 @@
                                         alt="<?= $img->getDescripcion() ?>"
                                         title="<?= $img->getDescripcion() ?>" width="100px">
                                 </td>
-                                <td><?= $imageRepository->getCategoria($imagen)->getNombre() ?></td>
+                                <td><?= $categorias[$img->getCategoria() - 1]->getNombre() ?></td>
                                 <td><?= $img->getNumVisualizaciones() ?></td>
                                 <td><?= $img->getNumLikes() ?></td>
                                 <td><?= $img->getNumDownloads() ?></td>

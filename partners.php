@@ -5,6 +5,7 @@
     require_once 'exceptions/app_exception.class.php';
     require_once 'entities/partner.class.php';
     require_once 'entities/repository/partner_repository.class.php';
+    require_once 'utils/utils.php';
 
     $errores = [];
     $descripcion = '';
@@ -43,5 +44,5 @@
         $partner = $PartnerRepository->findAll();
     }
 
-    require 'views/partner.view.php';
+    require 'views/partners.view.php';
 ?>

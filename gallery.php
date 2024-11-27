@@ -7,6 +7,7 @@ require_once 'entities/query_builder.class.php';
 require_once 'entities/categorias.class.php';
 require_once 'exceptions/app_exception.class.php';
 require_once 'exceptions/file_exception.class.php';
+require_once 'exceptions/query_exception.class.php';
 require_once 'entities/repository/image_gallery_repository.class.php';
 require_once 'entities/repository/categoria_repository.class.php';
 //array para guardar los mensajes de los errores
@@ -18,13 +19,15 @@ try {
     $config = require_once 'app/config.php';
 
     App::bind('config', $config);
+    $connection = App::getConnection();
 
     $imageRepository = new ImagenGaleriaRepository();
-    $categoryRepository = new CaregoriaRepository();
+    $categoryRepository = new CategoriaRepository();
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $descripcion = trim(htmlspecialchars($_POST['descripcion']));
-        $categoria = trim(htmlspecialchars($_POST['categoria']));
+        $descripcion = trim(htmlspecialchars($_POST['descripcion'] ?? ''));
+        $categoria = trim(htmlspecialchars($_POST['categoria'] ?? ''));
+
         $tiposAceptados = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'];
         $imagen = new File('imagen', $tiposAceptados);
         //el parametro fileNmae es 'imagen' porque así lo indicamos en

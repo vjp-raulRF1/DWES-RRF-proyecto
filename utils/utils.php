@@ -24,6 +24,8 @@
         return false;
     }
 
+
+    
     function mezclarPartners(array $partners){
         shuffle($partners);
         return  array_slice($partners,0,3);

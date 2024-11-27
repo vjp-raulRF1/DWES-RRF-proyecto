@@ -3,6 +3,7 @@ require_once 'utils/const.php';
 require_once 'exceptions/query_exception.class.php';
 require_once 'entities/app.class.php';
 require_once 'entities/database/IEntity.class.php';
+require_once 'entities/partner.class.php';
 abstract class QueryBuilder
 {
 
@@ -68,13 +69,13 @@ abstract class QueryBuilder
             throw new QueryException('No se ha podido realizar la operación');
         }
     }
-    public function save(IEntity $entity): void {
+    public function save(IEntity $entity) {
         $parameters = $entity->toArray();
         $sql = sprintf(
             'insert into %s (%s) values (%s)',
             $this->table,
             implode(', ', array_keys($parameters)),
-            ':' . implode(',:', array_keys($parameters))
+            ':' . implode(', :', array_keys($parameters))
         );
         try {
         $statement = $this->connection->prepare($sql);
@@ -83,14 +84,15 @@ abstract class QueryBuilder
                 $this->incrementarCategoria($entity->getCategoria());
             }
         } catch (PDOException $exception) {
-            throw new  PDOException(getErrorString(ERROR_INS_BD));
+            throw new  PDOException($exception->getMessage());
+            // throw new  PDOException(getErrorString(ERROR_INS_BD));
         }
     }
 
     public function incrementarCategoria(int $categoria){
         try{
         $this->connection->beginTransaction();
-        $sql = sprintf(`UPDATE categorias SET numImagenes=numImagenes+1 WHERE id=$categoria`);
+        $sql = "UPDATE categorias SET numImagenes=numImagenes+1 WHERE id=$categoria";
         $this->connection->exec($sql);
         $this->connection->commit();
         } catch(Exception $exception){
