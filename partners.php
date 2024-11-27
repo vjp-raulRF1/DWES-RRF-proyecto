@@ -41,7 +41,7 @@
         $errores[] = $exception->getMessage();
     } finally {
     
-        $partner = $PartnerRepository->findAll();
+        $partners = $PartnerRepository->findAll();
     }
 
     require 'views/partners.view.php';
