@@ -35,7 +35,7 @@ try {
         $imagen->saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
         $imagen->copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTFOLIO);
 
-        $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion,$categoria);
+        $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, $categoria);
         $imageRepository->save($imagenGaleria);
         $descripcion = '';
         $mensaje = 'Imagen guardada';
@@ -52,7 +52,6 @@ try {
 
     $imagenes = $imageRepository->findAll();
     $categorias = $categoryRepository->findAll();
-
 }
 
 require 'views/gallery.view.php';
