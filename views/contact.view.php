@@ -19,29 +19,29 @@
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-6">
 	       	  	    <label class="label-control">First Name</label>
-	       	  		<input class="form-control" type="text" name="nombre" value="<?php if(isset($_POST['nombre'] )) echo $_POST['nombre']  ; ?>"> 
+	       	  		<input class="form-control" type="text" name="nombre" value="<?php echo isset($nombre) ? htmlspecialchars($nombre) : '' ; ?>"> 
 	       	  	</div>
 	       	  	<div class="col-xs-6">
 	       	  	    <label class="label-control">Last Name</label>
-	       	  		<input class="form-control" type="text" name="apellido" value="<?php  if(isset($_POST['apellido'] )) echo $_POST['apellido']  ; ?>"> 
+	       	  		<input class="form-control" type="text" name="apellido" value="<?php  echo isset($apellido) ? htmlspecialchars($apellido) : ''  ; ?>"> 
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Email</label>
-	       	  		<input class="form-control" type="text" name="email" value="<?= $_POST['email'] ?? '' ?>">	
+	       	  		<input class="form-control" type="text" name="email" value="<?= $correo ?? '' ?>">	
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Subject</label>
-	       	  		<input class="form-control" type="text" name="asunto" value="<?php if(isset($_POST['asunto'] )) echo $_POST['asunto']; ?>"> 
+	       	  		<input class="form-control" type="text" name="asunto" value="<?php echo isset($asunto) ? htmlspecialchars($asunto) : '' ; ?>"> 
 	       	  	</div>
 	       	  </div>
 	       	  <div class="form-group">
 	       	  	<div class="col-xs-12">
 	       	  		<label class="label-control">Message</label>
-	       	  		<textarea class="form-control" name="mensaje"><?php if(isset($_POST['mensaje'] )) echo $_POST['mensaje']; ?></textarea>
+	       	  		<textarea class="form-control" name="mensaje"><?php echo isset($mensaje) ? htmlspecialchars($mensaje) : '' ; ?></textarea>
 	       	  		<button class="pull-right btn btn-lg sr-button">SEND</button>
 	       	  	</div>
 	       	  </div>
