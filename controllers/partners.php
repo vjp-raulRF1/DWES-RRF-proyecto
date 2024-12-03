@@ -12,10 +12,7 @@
     $mensaje = '';
 
     try {
-        $config = require_once 'app/config.php';
-        
-      
-        App::bind('config', $config);
+
         
         $PartnerRepository = new PartnerRepository();
 

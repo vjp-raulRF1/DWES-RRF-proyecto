@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../exceptions/app_exception.class.php';
+require_once 'exceptions/app_exception.class.php';
 require_once 'utils/const.php';
 class App
 {

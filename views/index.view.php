@@ -1,6 +1,6 @@
-<?php include __DIR__ . '/partials/inicio-doc.part.php'; ?>
+<?php include 'partials/inicio-doc.part.php'; ?>
 
-<?php include __DIR__ . '/partials/nav.part.php'; ?>
+<?php include 'partials/nav.part.php'; ?>
 
 <!-- Principal Content Start -->
 <div id="index">
@@ -97,7 +97,7 @@
   </div>
   <!-- End of Newsletter form -->
 
-  <?php include __DIR__ . '/partials/partners.part.php' ?>
+  <?php include 'partials/partners.part.php' ?>
 
 </div><!-- End of index box -->
 
@@ -122,4 +122,4 @@
   </div>
 </footer>
 
-<?php include __DIR__ . '/partials/fin-doc.part.php'; ?>
+<?php include 'partials/fin-doc.part.php'; ?>

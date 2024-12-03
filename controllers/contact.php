@@ -48,9 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $noErrores['mensaje'] = $_POST['mensaje'];
     }
 
-    $config = require_once 'app/config.php';
-    App::bind('config', $config);
-    $connection = App::getConnection();
+    
     $messageRepository = new MessageRepository();
 
     if (empty($errores)) {
