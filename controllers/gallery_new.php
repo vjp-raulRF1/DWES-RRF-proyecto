@@ -18,8 +18,22 @@ $mensaje = "";
 try {
 
     $imageRepository = new ImagenGaleriaRepository();
-    $categoryRepository = new CategoriaRepository();
 
+    $descripcion = trim(htmlspecialchars($_POST['descripcion'] ?? ''));
+    $categoria = trim(htmlspecialchars($_POST['categoria'] ?? ''));
+
+    $tiposAceptados = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'];
+    $imagen = new File('imagen', $tiposAceptados);
+    //el parametro fileNmae es 'imagen' porque así lo indicamos en
+    //en el formulario (type='file' name='imagen')
+    $imagen->saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
+    $imagen->copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTFOLIO);
+
+    $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, $categoria);
+    $imageRepository->save($imagenGaleria);
+
+    $descripcion = '';
+    $mensaje = 'Imagen guardada';
 } catch (FileException $exception) {
     $errores[] = $exception->getMessage();
 } catch (QueryException $exception) {
@@ -28,11 +42,7 @@ try {
     $errores[] = $exception->getMessage();
 } catch (PDOException $exception) {
     $errores[] = $exception->getMessage();
-} finally {
-
-    $imagenes = $imageRepository->findAll();
-    $categorias = $categoryRepository->findAll();
 }
 
-require 'views/gallery.view.php';
+    header('Location: /gallery');
 ?>
