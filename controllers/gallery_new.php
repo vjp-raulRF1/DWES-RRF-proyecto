@@ -33,7 +33,8 @@ try {
     $imageRepository->save($imagenGaleria);
 
     $descripcion = '';
-    $mensaje = 'Imagen guardada';
+    $mensaje = 'Imagen guardada '. $imagenGaleria->getNombre();
+    App::get('logger')->add($mensaje);
 } catch (FileException $exception) {
     $errores[] = $exception->getMessage();
 } catch (QueryException $exception) {
