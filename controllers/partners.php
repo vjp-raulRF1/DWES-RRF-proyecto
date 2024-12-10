@@ -1,11 +1,18 @@
 <?php
-    require_once 'entities/file.class.php';
-    require_once 'entities/connection.class.php';
-    require_once 'entities/query_builder.class.php';
-    require_once 'exceptions/app_exception.class.php';
-    require_once 'entities/partner.class.php';
-    require_once 'entities/repository/partner_repository.class.php';
-    require_once 'utils/utils.php';
+    // require_once 'entities/file.class.php';
+    // require_once 'entities/connection.class.php';
+    // require_once 'entities/query_builder.class.php';
+    // require_once 'exceptions/app_exception.class.php';
+    // require_once 'entities/partner.class.php';
+    // require_once 'entities/repository/partner_repository.class.php';
+    // require_once 'utils/utils.php';
+
+    use proyecto\entities\repository\PartnerRepository;
+    use proyecto\entities\Partner;
+    use proyecto\entities\File;
+    use proyecto\exceptions\AppException;
+    use proyecto\exceptions\FileException;
+    use proyecto\exceptions\QueryException;
 
     $errores = [];
     $descripcion = '';

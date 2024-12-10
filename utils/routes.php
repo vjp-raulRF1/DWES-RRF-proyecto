@@ -1,4 +1,5 @@
 <?php
+    namespace proyecto\utils;
 
     $router->get('' , 'controllers/index.php');
     $router->get('about' , 'controllers/about.php');

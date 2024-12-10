@@ -1,5 +1,6 @@
 <?php
-
+namespace proyecto\entities;
+use proyecto\exceptions\NotFoundException;
     class Router
     {
         private $routes;

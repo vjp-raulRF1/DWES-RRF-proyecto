@@ -1,6 +1,10 @@
 <?php
-require_once 'exceptions/file_exception.class.php';
-require_once 'utils/const.php';
+// require_once 'exceptions/file_exception.class.php';
+// require_once 'utils/const.php';
+namespace proyecto\entities;
+use proyecto\utils;
+use proyecto\exceptions\FileException;
+
 class File
 {
     private $file;
@@ -19,7 +23,7 @@ class File
         //Verificamos si ha habido algún error durante la subida del fichero
         if ($this->file['error'] !== UPLOAD_ERR_OK) {
             // Obtenemos el mensaje de error utilizando la función getErrorString
-            $mensajeError = getErrorString($this->file['error']);
+            $mensajeError = utils\getErrorString($this->file['error']);
             
             // Lanzamos la excepción con el mensaje de error correspondiente
             throw new FileException($mensajeError);

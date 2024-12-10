@@ -1,4 +1,6 @@
 <?php
+namespace proyecto\entities;
+use proyecto\utils;
 class Partners
 {
     private $nombre;

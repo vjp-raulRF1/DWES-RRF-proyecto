@@ -1,10 +1,16 @@
 <?php
-require_once 'utils/utils.php';
-require_once 'entities/image_gallery.class.php';
-require_once 'entities/partners.class.php';
-require_once 'entities/connection.class.php';
-require_once 'entities/repository/image_gallery_repository.class.php';
-require_once 'entities/repository/partner_repository.class.php';
+// require_once 'utils/utils.php';
+// require_once 'entities/image_gallery.class.php';
+// require_once 'entities/partners.class.php';
+// require_once 'entities/connection.class.php';
+// require_once 'entities/repository/image_gallery_repository.class.php';
+// require_once 'entities/repository/partner_repository.class.php';
+
+use proyecto\entities\repository\ImagenGaleriaRepository;
+use proyecto\entities\repository\PartnerRepository;
+use proyecto\exceptions\AppException;
+use proyecto\exceptions\FileException;
+use proyecto\exceptions\QueryException;
 
 $errores = [];
 

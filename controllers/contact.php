@@ -1,10 +1,13 @@
 <?php
-require_once 'entities/file.class.php';
-require_once 'entities/connection.class.php';
-require_once 'entities/query_builder.class.php';
-require_once 'exceptions/app_exception.class.php';
-require_once 'entities/message.class.php';
-require_once 'entities/repository/mensaje_repository.class.php';
+// require_once 'entities/file.class.php';
+// require_once 'entities/connection.class.php';
+// require_once 'entities/query_builder.class.php';
+// require_once 'exceptions/app_exception.class.php';
+// require_once 'entities/message.class.php';
+// require_once 'entities/repository/mensaje_repository.class.php';
+
+use proyecto\entities\repository\MessageRepository;
+use proyecto\entities\Message;
 
 $errores = [];
 $noErrores = [];

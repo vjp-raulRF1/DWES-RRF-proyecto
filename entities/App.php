@@ -1,6 +1,9 @@
 <?php
-require_once 'exceptions/app_exception.class.php';
-require_once 'utils/const.php';
+// require_once 'exceptions/app_exception.class.php';
+// require_once 'utils/const.php';
+namespace proyecto\entities;
+use proyecto\utils;
+use proyecto\exceptions\AppException;
 class App
 {
     /**
@@ -25,7 +28,7 @@ class App
     {
         //si existe el elemento lo devuelve o sino lanza excepción
         if (!array_key_exists($key, static::$container)) {
-            throw new AppException(getErrorString(ERROR_APP_CORE));
+            throw new AppException(utils\getErrorString(ERROR_APP_CORE));
         }
         return static::$container[$key];
     }

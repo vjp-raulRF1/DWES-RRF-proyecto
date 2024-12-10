@@ -3,6 +3,8 @@
      * Verifica si una opción de menú está activa comparando con la URL actual.
     
      */
+    namespace proyecto\utils;
+
     function esOpcionMenuActiva(string $opcionMenu): bool {
         if ($_SERVER['REQUEST_URI'] === $opcionMenu) {
             return true;

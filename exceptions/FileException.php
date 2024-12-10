@@ -1,6 +1,7 @@
 <?php
-
-class AppException extends Exception
+namespace proyecto\exceptions;
+use Exception;
+class FileException extends Exception
 {
     public function __construct(string $mensaje)
     {

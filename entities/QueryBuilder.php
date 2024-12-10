@@ -1,9 +1,17 @@
 <?php
-require_once 'utils/const.php';
-require_once 'exceptions/query_exception.class.php';
-require_once 'entities/app.class.php';
-require_once 'entities/database/IEntity.class.php';
-require_once 'entities/partner.class.php';
+// require_once 'utils/const.php';
+// require_once 'exceptions/query_exception.class.php';
+// require_once 'entities/app.class.php';
+// require_once 'entities/database/IEntity.class.php';
+// require_once 'entities/partner.class.php';
+
+namespace proyecto\entities;
+use proyecto\exceptions\QueryException;
+use proyecto\exceptions\NotFoundException;
+use proyecto\entities\database\IEntity;
+use PDO;
+use PDOException;
+use Exception;
 abstract class QueryBuilder
 {
 
