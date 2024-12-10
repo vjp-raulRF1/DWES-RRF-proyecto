@@ -9,9 +9,9 @@
     use proyecto\entities\App;
     use proyecto\entities\Router;
     use proyecto\entities\repository\MyLog;
-    require_once 'vendor/autoload.php';
+    require_once '../vendor/autoload.php';
     
-    $config = require_once 'app/config.php';
+    $config = require_once '../app/config.php';
     App::bind('config', $config);
    
     

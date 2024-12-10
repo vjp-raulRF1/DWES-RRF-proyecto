@@ -14,7 +14,7 @@ use proyecto\exceptions\NotFoundException;
         
         public static function load(string $file): Router{
             $router=new Router();
-            require $file;
+            require "../$file";
             return $router;
         }
         
