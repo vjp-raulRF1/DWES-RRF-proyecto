@@ -41,5 +41,5 @@ catch (FileException | QueryException | AppException $exception) {
 
 
   
-require 'views/index.view.php';
+require '../views/index.view.php';
 ?>

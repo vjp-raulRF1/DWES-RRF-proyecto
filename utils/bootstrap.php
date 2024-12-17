@@ -5,7 +5,7 @@
     // require_once 'exceptions/not_found.class.php';
     // require_once 'entities/repository/mylog.class.php';
     
-    
+    require_once '../utils/utils.php';
     use proyecto\entities\App;
     use proyecto\entities\Router;
     use proyecto\entities\repository\MyLog;

@@ -48,5 +48,5 @@
         $partners = $PartnerRepository->findAll();
     }
 
-    require 'views/partners.view.php';
+    require '../views/partners.view.php';
 ?>

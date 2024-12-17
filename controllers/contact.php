@@ -65,6 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mensaje ='';
     }
 }
-require 'utils/utils.php';
-require 'views/contact.view.php';
+// require 'utils/utils.php';
+require '../views/contact.view.php';
 ?>

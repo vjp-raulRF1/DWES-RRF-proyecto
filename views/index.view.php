@@ -44,7 +44,7 @@
           <?php
           shuffle($imagenesGaleria);
           foreach ($imagenesGaleria as $img) {
-            include "views/partials/image_gallery.part.php";
+            include "../views/partials/image_gallery.part.php";
           }; ?>
         </div>
         <nav class="text-center">
@@ -62,19 +62,23 @@
 
       <!--second category pictures -->
       <div id="category2" class="tab-pane">
-        <?php shuffle($imagenesGaleria);
-        foreach ($imagenesGaleria as $img) {
-          include "views/partials/image_gallery.part.php";
-        }; ?>
+        <div class="row popup-gallery">
+          <?php shuffle($imagenesGaleria);
+          foreach ($imagenesGaleria as $img) {
+            include "../views/partials/image_gallery.part.php";
+          }; ?>
+        </div>
       </div>
       <!-- End of second category pictures -->
 
       <!-- Third Category Pictures -->
       <div id="category3" class="tab-pane">
-        <?php shuffle($imagenesGaleria);
-        foreach ($imagenesGaleria as $img) {
-          include "views/partials/image_gallery.part.php";
-        };?>
+        <div class="row popup-gallery">
+          <?php shuffle($imagenesGaleria);
+          foreach ($imagenesGaleria as $img) {
+            include "../views/partials/image_gallery.part.php";
+          };?>
+        </div>
       </div>
       <!-- Third Category Pictures -->
 
